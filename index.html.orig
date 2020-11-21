@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<title>Ainesh Bakshi</title>
+<body>
+
+<table cellpadding="20">
+<tr>
+<td>
+<img src="pic.jpg" width="250" height="250">
+</td>
+<td>
+<font size="8"><strong>Ainesh Bakshi</strong></font>
+<br><br>Email: abakshi (at) cs (dot) cmu (dot) edu<br><br>
+Office: GHC 7515 <br><br>
+</td>
+</tr>
+</table>
+<p>
+I am a first year PhD student at Carnegie Mellon University. I am extremely fortunate to be advised by <a href="http://www.cs.cmu.edu/~dwoodruf/">David Woodruff</a>.
+<<<<<<< HEAD
+I am broadly interested in Theoretical Computer Science and
+my current research interests are algorithms for randomized linear algebra, communication complexity and provable guarantees for learning problems.</br></br>
+
+Previously, I was an undergrad at Rutgers, New Brunswick, where I had the pleasure of working with <a href="https://www.cs.rutgers.edu/~farach/">Martin Farach-Colton</a>
+and <a href="https://www.cs.rutgers.edu/~pa336/">Pranjal Awasthi</a> on external memory algorithms and clustering respectively.
+=======
+I am broadly interested in Theoretical Computer Science.</br></br>
+>>>>>>> 011a9e5c899460b622dda9cca9a3259bbbab7849
+
+</p>
+<hr />
+<h3>Undergrad Publications</h3>
+
+"Sublinear Time Low-Rank Approximation of Distance Matrices"</a><br>
+Ainesh Bakshi,
+David Woodruff<br>
+NIPS 2018 (to appear). Selected for Spotlight Presentation. <br><br>
+
+
+<a href="https://www.usenix.org/publications/login/summer2017/conway">
+"How to Fragment your File System"</a><br>
+A. Conway,
+A. Bakshi,
+Y. Jiao,
+Y. Zhan,
+M. Bender,
+W. Jannen,
+R. Johnson,
+B. Kuzmaul,
+D. Porter,
+J. Yuan,
+M. Farach-Colton<br>
+;login: magazine, vol. 42(2), 2017.<br><br>
+
+<a href="https://www.usenix.org/conference/fast17/technical-sessions/presentation/conway">
+"File Systems fated for Senescence? Nonsense, Says Science!"</a><br>
+A. Conway,
+A. Bakshi,
+Y. Jiao,
+Y. Zhan,
+M. Bender,
+W. Jannen,
+R. Johnson,
+B. Kuzmaul,
+D. Porter,
+J. Yuan,
+M. Farach-Colton<br>
+Proceedings of the 15th USENIX Conference on File and Storage Technologies (FAST '17), Santa Clara, CA, February 2017.<br><br>
+
+<a href="pubs/Optimization.pdf">
+"Non Dominated Sorting Genetic Algorithm for Chance Constrained Supplier Selection Model with Volume Discounts"</a><br>
+R. Agarwal,
+A. Bakshi<br>
+ACIIDS, Lecture Notes in Computer Science pp. 465–474, Apr 2014.<br><br>
+
+<a href="pubs/Classification.pdf">
+"A Novel Feature Selection and Extraction Technique for Classification"</a><br>
+K. Goel,
+R. Vohra
+A. Bakshi<br>
+ICFHR 2014, pp. 104-109.<br><br>
+
+<a href="pubs/PathPlanning.pdf">
+"Autonomous Robot Navigation: Path Planning on a Detail-Preserving Reduced-Complexity Representation of 3D Point Clouds"</a><br>
+R. Sant,
+N. Kulkarni,
+A. Bakshi,
+K. Goel,
+S. Kapur<br>
+ICFHR 2014, pp. 104-109.<br><br>
+
+
+
+</body>
+</html>
