@@ -1,78 +1,93 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137059345-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <style>
+        #content {
+            float: left;
+            overflow: auto;
 
-  gtag('config', 'UA-137059345-1');
-</script>
+        }
 
+        .maincontainer {
+            height: 100%;
+            overflow: auto;
+            float: left;
+            width: 60%;
 
-<style type="text/css">
-      body {
-        font-size: 1.13em;
-        font-family: "Karla", "Helvetica", sans-serif;
-        padding: 4em 1em;
-        width:800px;
-        margin-left:auto;
-        margin-right:auto;
-      }
-      h1, h2, h3 {
-        font-family: "Libre Baskerville", serif;
-      }
-      h2 {
-        padding-top: 0.5em;
-      }
-      p {
-        font-size: 1.13em;
-      }
-</style>
+            background-color: rgba(200, 200, 200, 0);
+        }
 
-<title>Timothy Chu</title>
+        .sidecontainer {
+            height: 100%;
+            overflow: auto;
+            float: left;
+            width: 40%;
+            background-color: rgba(200, 200, 200, 0.2);
+
+        }
+
+        #side-panel {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dragEnd(ev) {
+            var element = ev.target;
+            if (element.parentElement.id !== "side-panel") {
+                return;
+            }
+            element.parentElement.removeChild(element);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var element = document.getElementById(data);
+            var copy = element.cloneNode(true);
+            copy.style.display = "block";
+
+            var sidePanel = document.getElementById("side-panel");
+            sidePanel.appendChild(copy);
+        }
+    </script>
 </head>
+
 <body>
+    <div class="maincontainer">
+        <div id="content">
+            Humans don’t start their thinking from scratch every second. As you read this essay, you understand each word based on your understanding of previous words. You don’t throw everything away and start thinking from scratch again. Your thoughts have persistence.
+            <br><br>
+            Traditional neural networks can’t do this, and it seems like a major shortcoming. For example, imagine you want to classify what kind of event is happening at every point in a movie. It’s unclear how a traditional neural network could use its reasoning about previous events in the film to inform later ones.
+            <br><br>
+            Recurrent neural networks address this issue. They are networks with loops in them, allowing information to persist.
+            <br>
+            <img src="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png" id="draggable-image" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="height:50%; max-width:100%">
+            <br><br>
+            In the above diagram, a chunk of neural network, A, looks at some input xt and outputs a value ht. A loop allows information to be passed from one step of the network to the next.
+            <br><br>
 
-<table cellpadding="20">
-<tr>
-<td>
-<img src="pic.png" width="165" height="180"> 
-</td>
-<td>
-<font size="5"><strong>Timothy Chu</strong></font>
-<br><br>Email: timothyzchu (at) gmail (dot) com <br><br>
-<!--Office: GHC 5103 <br><br>-->
-</td>
-</tr>
-</table>
-<p>
-Hi! My name is Timothy Chu, a PhD student at Carnegie Mellon University
-in computer science theory. I am interested in machine learning theory,
-spectral graph algorithms, and computational geometry. Some of my
-favorite
-work combines two or more of these topics! 
-</p>
-<p>
-Besides for theoretical research, I love using my skills to make a
-difference around the world. I interviewed a hundred Trump supporters
-before the 2016 election, co-started a mask campaign in Pakistan
-featuring the country's top celebrities,
-and taught brilliant students in West Africa who later won highest
-honors at Princeton and MIT.
+            These loops make recurrent neural networks seem kind of mysterious. However, if you think a bit more, it turns out that they aren’t all that different than a normal neural network. A recurrent neural network can be thought of as multiple copies of the same network, each passing a message to a successor. Consider what happens if we unroll the loop:
+            <br><br>
+            <img src="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-SimpleRNN.png" id="draggable-image-2" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="max-width:100%">
+        </div>
+    </div>
+    <div class="sidecontainer">
+        <div id="side-panel" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)">
+            Image Panel. Drag and drop images here.
 
-</p>
-<hr />
-<h3>Links</h3>
-<a href="academic.html">Academic Page</a>
-<br><br>
-<a href="https://blooming-beach-47499.herokuapp.com/projects">Non-Academic
-  projects</a>.
-<br><br>
-
-
+            <!-- Side panel goes here -->
+        </div>
+    </div>
 </body>
+
 </html>
