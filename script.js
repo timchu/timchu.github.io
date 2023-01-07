@@ -12,7 +12,7 @@ function showImage(imgId) {
 function showCaptioned(captionedId) {
   var sidePanel = document.getElementById('side-panel')
   var captioned = document.getElementById(captionedId);
-  captioned.onclick = '';
+  captioned.removeAtrribute('onclick')
   console.log('Changed onclick');
   console.log(captioned.outerHTML);
   sidePanel.innerHTML =
