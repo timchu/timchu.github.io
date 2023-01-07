@@ -1,6 +1,6 @@
 function imgHtml(src) {
-  return '<div><br><div class="image-container"><div class="close-button" onclick=removeImage(this)>X</div><img src="' +
-      src + '"></div></div>';
+  return '<div><div class="image-container"><div class="close-button" onclick=removeImage(this)>X</div><img src="' +
+      src + '"></div><br/></div>';
 };
 
 function showImage(imgId) {
