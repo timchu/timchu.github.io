@@ -11,6 +11,7 @@ function showImage(imgId) {
 
 function showCaptioned(captionedId) {
   var sidePanel = document.getElementById('side-panel')
+  console.log('Fixed stuff???')
   const captioned = document.getElementById(captionedId).cloneNode(true);
   captioned.removeAtrribute('onclick')
   console.log('Changed onclick');
