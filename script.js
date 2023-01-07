@@ -11,14 +11,13 @@ function showImage(imgId) {
 
 function showCaptioned(captionedId) {
   var sidePanel = document.getElementById('side-panel')
-  var captioned = document.getElementById(captionedId);
+  const captioned = document.getElementById(captionedId).cloneNode(true);
   captioned.removeAtrribute('onclick')
   console.log('Changed onclick');
   console.log(captioned.outerHTML);
   sidePanel.innerHTML =
       '<div><div class="captioned"><br><div class="close-button" onclick=removeImage(this)>X</div>' +
-      captioned.cloneNode(captioned).outerHTML + '</div><br/></div>' +
-      sidePanel.innerHTML;
+      captioned.outerHTML + '</div><br/></div>' + sidePanel.innerHTML;
 };
 function removeImage(element) {
   element.parentNode.parentNode.remove();
