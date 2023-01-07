@@ -2,185 +2,73 @@
 <html>
 
 <head>
-    <style>
-        html,
-        body,
-        #fullheight {
-            min-height: 100%;
-            height: 100%;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-        #content {
-            float: left;
-            overflow: auto;
-
-        }
-
-        .maincontainer {
-            height: 100%;
-            overflow: auto;
-            float: left;
-            width: 60%;
-
-            background-color: rgba(200, 200, 200, 0);
-        }
-
-        .sidecontainer {
-            height: 100%;
-            overflow: auto;
-            float: left;
-            width: 40%;
-            background-color: rgba(200, 200, 200, 0.2);
-        }
-
-        #side-panel {
-            height: 100%;
-            overflow: auto;
-        }
-    </style>
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function dragEnd(ev) {
-            var element = ev.target;
-            if (element.parentElement.id !== "side-panel") {
-                return;
-            }
-            element.parentElement.removeChild(element);
-        }
-
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            var element = document.getElementById(data);
-            var copy = element.cloneNode(true);
-            copy.style.display = "block";
-
-            var sidePanel = document.getElementById("side-panel");
-            sidePanel.appendChild(copy);
-        }
-    </script>
+    <script src="script.js"></script>
 </head>
 
+
 <body>
-    <div class="maincontainer">
-        <div id="content">
-            <h1> Demonstrating the Image Side Bar (via Equations and Theorems) </h1>
-            This is an example of a famous equation you might want to know. It's called the Mass-Energy Equivalence equation, made famous by Einstein. Drag the image to the side bar. (To get rid of it, drag it off the side bar). We'll need to refer to it later!
-            <br>
-            <img src="https://energywavetheory.com/wp-content/uploads/2019/10/einstein-energy-mass-relation-emc2.jpg" id="emc2" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="height=350">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            This is an example of a Theorem you might want to know. It is called the Pythagorean Theorem. Drag this image over to the side bar. (To get rid of it, drag it off the side bar).
-            <br>
-            <img src="https://miro.medium.com/max/923/1*SsN2DG__Z5DyOI0uf7hbwQ.png" id="pythagorean" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="width:50%; height:50%">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            This is an example of a very complicated theory you might want to refer to later. It is called the theorem of Quadratic Reciprocity. Feel free to scroll past it to get to the surprise at the bottom!
-            <img src="https://media.cheggcdn.com/media/60b/60b39407-42e3-4636-93fb-9207ed2adf79/php5E3ZeI.png" id="quadratic" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="max-width=100%">
-            <br>
-            <br>
-            <br>
-            Here is some explanatory text that exists in a normal textbook. Scroll all the way down to the bottom for a surprise!!
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            Text
-            <br>
-            <br>
-            What does the c stand for in the Mass-Energy Equivalence equation, made famous by Einstein?
-            <br>
-            <br>
-            Aren't you glad you saved it in the side bar?
-            <!--
 
-            This is an example of another Theorem you might want to know. It is called the
-            The rest of this document is a copy of https://colah.github.io/posts/2015-08-Understanding-LSTMs/
-            <br>
-            <h1> Understanding LSTM Networks </h1>
-            <h2> Recurrent Neural Networks </h2>
-            Humans don’t start their thinking from scratch every second. As you read this essay, you understand each word based on your understanding of previous words. You don’t throw everything away and start thinking from scratch again. Your thoughts have persistence.
-            <br><br>
-            Traditional neural networks can’t do this, and it seems like a major shortcoming. For example, imagine you want to classify what kind of event is happening at every point in a movie. It’s unclear how a traditional neural network could use its reasoning about previous events in the film to inform later ones.
-            <br><br>
-            Recurrent neural networks address this issue. They are networks with loops in them, allowing information to persist.
-            <br>
-            <img src="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-rolled.png" id="draggable-image" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="height:50%; max-width:100%">
-            <br><br>
-            In the above diagram, a chunk of neural network, A, looks at some input xt and outputs a value ht. A loop allows information to be passed from one step of the network to the next.
-            <br><br>
+    <div id="main-panel">
+        <h1>Machine Learning for Beginners: An Introduction to Neural Networks </h1>
+        A simple explanation of how they work and how to implement one from scratch in Python.
+        <br /><br />
+        Here’s something that might surprise you: neural networks aren’t that complicated! The term “neural network” gets
+        used as a buzzword a lot, but in reality they’re often much simpler than people imagine.
+        <br /><br />
+        This post is intended for complete beginners and assumes ZERO prior knowledge of machine learning. We’ll understand
+        how neural networks work while implementing one from scratch in Python.
+        <br /><br />
+        Let’s get started!
+        <br /><br />
 
-            These loops make recurrent neural networks seem kind of mysterious. However, if you think a bit more, it turns out that they aren’t all that different than a normal neural network. A recurrent neural network can be thought of as multiple copies of the same network, each passing a message to a successor. Consider what happens if we unroll the loop:
-            <br><br>
-            <img src="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png" id="draggable-image-2" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="max-width:100%">
-            <br><br>
-            This chain-like nature reveals that recurrent neural networks are intimately related to sequences and lists. They’re the natural architecture of neural network to use for such data.
-            <br><br>
+        <h2> 1. Building Blocks: Neurons </h2>
+        First, we have to talk about neurons, the basic unit of a neural network. A neuron takes inputs, does some math with
+        them, and produces one output. Here’s what a 2-input neuron looks like:
 
-            And they certainly are used! In the last few years, there have been incredible success applying RNNs to a variety of problems: speech recognition, language modeling, translation, image captioning… The list goes on. I’ll leave discussion of the amazing feats one can achieve with RNNs to Andrej Karpathy’s excellent blog post, The Unreasonable Effectiveness of Recurrent Neural Networks. But they really are pretty amazing.
-            <br><br>
-
-            Essential to these successes is the use of “LSTMs,” a very special kind of recurrent neural network which works, for many tasks, much much better than the standard version. Almost all exciting results based on recurrent neural networks are achieved with them. It’s these LSTMs that this essay will explore.
-            <br><br>
-            <h1>The Problem of Long-Term Dependencies
-            </h1>
-            One of the appeals of RNNs is the idea that they might be able to connect previous information to the present task, such as using previous video frames might inform the understanding of the present frame. If RNNs could do this, they’d be extremely useful. But can they? It depends.
-            <br><br>
-
-            Sometimes, we only need to look at recent information to perform the present task. For example, consider a language model trying to predict the next word based on the previous ones. If we are trying to predict the last word in “the clouds are in the sky,” we don’t need any further context – it’s pretty obvious the next word is going to be sky. In such cases, where the gap between the relevant information and the place that it’s needed is small, RNNs can learn to use the past information.
-
-            <img src="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" id="draggable-image-3" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)" style="max-width:100%">
-            -->
-
-
+        <div id="captioned:perceptron" onclick="showCaptioned('captioned:perceptron')">
+            <img src="https://victorzhou.com/a74a19dc0599aae11df7493c718abaf9/perceptron.svg">
+            <p class='caption'> A 2-input neuron </p>
         </div>
+
+        3 things are happening here. First, each input is multiplied by a weight (one per input, represented by red in the picture above):
+        <br /><br />
+
+        <img id='img:weight' src="https://miro.medium.com/max/4800/1*Iq76QGqSTJfYRztFhwK0yw.webp" onclick="showImage('img:weight')">
+        Next, all the weighted inputs are added together with a bias (represented by the green sum sign in the picture above).
+        <img id='img:bias' src="https://miro.medium.com/max/4800/1*CE-YfWhFQ2yQSGq9Zaxd9Q.webp" onclick="showImage('img:bias')">
+        <br /><br />
+        Finally, the sum is passed through an activation function:
+        <img id='img:activation' src="https://miro.medium.com/max/4800/1*9BFMXPkoAqN_EW7XTPvuGg.webp" onclick="showImage('img:activation')">
+        <br /><br />
+        The activation function is used to turn an unbounded input into an output that has a nice, predictable form. A commonly used activation function is the sigmoid function:
+        <div id="captioned:sigmoid" onclick="showCaptioned('captioned:sigmoid')">
+            <img src="https://miro.medium.com/max/1400/1*Ul8Yu_r8GKSFillzbPFrPQ.webp">
+            <p class='caption'> A sigmoid function transforms all numbers to be between 0 and 1 </p>
+        </div>
+        The sigmoid function only outputs numbers in the range (0,1). You can think of it as compressing (−∞,+∞) to (0,1) — big negative numbers become ~0, and big positive numbers become ~1.
+
+        <h3> A Simple Example</h3>
+
+        Assume we have a 2-input neuron that uses the sigmoid activation function and has the following parameters: w = [0, 1] and b = 4.
+        <br /><br />
+
+        w=[0, 1] is just a way of writing w1​=0, w2​=1 in vector form. Now, let’s give the neuron an input of x=[2, 3]. We’ll use the dot product to write things more concisely:
+        <div id="captioned:worked_example" onclick="showCaptioned('captioned:worked_example')">
+            <img src="https://miro.medium.com/max/1400/1*pOMfnp8FI3KTcpuNwBDPSA.webp">
+            <p class="caption">A worked example of a neuron being applied to input x=[2,3]. The weights of the neuron are w=[0,1] , and the bias b=4.</p>
+        </div>
+
+        The neuron outputs 0.999 given the inputs x=[2,3]. That’s it! This process of passing inputs forward to get an output is known as <b>feedforward.</b>
+    </div>
+    <div id="side-panel">
+        You can click on an image or theorem to pop it into the side panel!
     </div>
 
-    <div class="sidecontainer">
-        <div id="side-panel" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)">
-            Image Panel. Drag and drop images here. To remove images, drag them off the panel.
-
-            <!-- Side panel goes here -->
-        </div>
-    </div>
 </body>
 
 </html>

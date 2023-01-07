@@ -1,0 +1,51 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.image-container {
+    border: 3px solid green;
+    display: block;
+    position: relative;
+}
+
+.captioned {
+    border: 3px solid green;
+    display: block;
+    position: relative;
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#main-panel {
+    /*    margin: 20px;*/
+    height: 100%;
+    overflow: auto;
+    float: left;
+    width: 55%;
+    border-spacing: 15px;
+}
+
+#side-panel {
+    height: 100%;
+    overflow: auto;
+    float: left;
+    width: 41%;
+    background-color: rgba(245, 245, 245);
+}
