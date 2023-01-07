@@ -13,7 +13,7 @@ function showCaptioned(captionedId) {
   var sidePanel = document.getElementById('side-panel')
   console.log('Fixed stuff???')
   const captioned = document.getElementById(captionedId).cloneNode(true);
-  captioned.removeAtrribute('onclick')
+  captioned.removeAttribute('onclick')
   console.log('Changed onclick');
   console.log(captioned.outerHTML);
   sidePanel.innerHTML =
