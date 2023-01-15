@@ -11,11 +11,8 @@ function showImage(imgId) {
 
 function showCaptioned(captionedId) {
   var sidePanel = document.getElementById('side-panel')
-  console.log('Fixed stuff???')
   const captioned = document.getElementById(captionedId).cloneNode(true);
   captioned.removeAttribute('onclick')
-  console.log('Changed onclick');
-  console.log(captioned.outerHTML);
   sidePanel.innerHTML =
       '<div><div class="captioned"><br><div class="close-button" onclick=removeImage(this)>X</div>' +
       captioned.outerHTML + '</div><br/></div>' + sidePanel.innerHTML;
