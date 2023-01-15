@@ -39,7 +39,7 @@ img {
     overflow: auto;
     float: left;
     width: 55%;
-    border-spacing: 15px;
+    /* border-spacing: 15px; */
 }
 
 #side-panel {
